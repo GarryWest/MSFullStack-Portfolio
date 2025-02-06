@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garry West Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="main-title">Hi, I'm Garry. Welcome to My Website</h1>
+      <nav role="navigation" aria-label="Main Navigation">
+        <button
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="menu-list"
+          class="hamburger"
+        >
+          <span class="hamburger-icon">&#9776;</span>
+        </button>
+        <ul id="menu-list" role="menubar" style="list-style-type: none">
+          <li><a href="#about-me" role="menuitem">About</a></li>
+          <li><a href="#projects" role="menuitem">Projects</a></li>
+          <li><a href="#skills" role="menuitem">Skills</a></li>
+          <li><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
+      <script>
+        document
+          .getElementById("menu-toggle")
+          .addEventListener("click", function () {
+            var menuList = document.getElementById("menu-list");
+            var expanded = this.getAttribute("aria-expanded") === "true";
+            this.setAttribute("aria-expanded", !expanded);
+            menuList.style.display = expanded ? "none" : "block";
+          });
+      </script>
+      <article>
+        <p>
+          I have been a programmer for over 20 years. I am in the process of
+          modernizing my skills!
+        </p>
+      </article>
+    </header>
+    <main>
+      <section id="about-me" aria-labelledby="about-me-title">
+        <h2 id="about-me-title">About</h2>
+        <p>When I'm not programming, I enjoy playing chess and the piano.</p>
+      </section>
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <article class="project-card">
+          <figure>
+            <img src="images/search.png" alt="Project 1 Screenshot" />
+            <figcaption>Project 1: Google Clone Website</figcaption>
+          </figure>
+          <p>
+            Developed a clone redirecting to Google search, advanced search and
+            image search.
+          </p>
+        </article>
+        <article class="project-card">
+          <figure>
+            <img src="images/wiki.png" alt="Project 2 Screenshot" />
+            <figcaption>Project 2: Wiki Website</figcaption>
+          </figure>
+          <p>Created a wiki site using Python and Django.</p>
+        </article>
+        <article class="project-card">
+          <figure>
+            <img src="images/auction.png" alt="Project 3 Screenshot" />
+            <figcaption>Project 3: Auction Site</figcaption>
+          </figure>
+          <p>
+            Built an auction site with login/authorization, bidding, comments
+            and watchlists.
+          </p>
+        </article>
+      </section>
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <ul class="skills-list" style="list-style-type: none">
+          <li class="skill-html">HTML</li>
+          <li class="skill-css">CSS</li>
+          <li class="skill-js">JavaScript</li>
+          <li class="skill-react">React</li>
+          <li class="skill-node">Node.js</li>
+          <li class="skill-python">Python</li>
+          <li class="skill-sql">SQL</li>
+          <li class="skill-git">Git</li>
+          <li class="skill-agile">Agile Methodologies</li>
+          <li class="skill-problem-solving">Problem Solving</li>
+        </ul>
+      </section>
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <form id="contact-form" action="/submit-form" method="post">
+          <div style="display: flex; align-items: center; margin-bottom: 1em">
+            <label for="name" style="width: 100px">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 1em">
+            <label for="email" style="width: 100px">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 1em">
+            <label for="message" style="width: 100px">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" style="margin: 2em">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Website</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
